@@ -1,0 +1,323 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+/* font-family: 'Viga', sans-serif; */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Russo One', sans-serif;
+
+}
+/* reset */
+li,
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+select {
+  border: none;
+  background: none;
+  font-size: 18px;
+  font-style: normal;
+  font-family: 'Russo One', sans-serif;
+  text-decoration: none;
+  outline: none;
+}
+
+select option {
+  background-color: #ccc;
+}
+
+/* 전체 레이아웃 */
+#wrap {
+  background: url(img/bg_5.jpg) no-repeat;
+  background-size: cover;
+}
+
+#header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-bottom: 2px solid rgba(255,255,255,0.2);
+}
+
+.banner {
+  height: 100vh;
+}
+
+.slideList {
+  height: 100%;
+}
+
+/* ---------------------------- header */
+.header {
+  display: flex;
+  justify-content: space-around;
+  height: 60px;
+  margin-top: 23px;
+  padding-bottom: 10px;
+}
+.header > div {
+}
+.header .h_logo {
+  float: left;
+  width: 120px;
+  height: 50px;
+}
+.header .h_logo img {
+  width: 100%;
+}
+.header .h_nav {
+  display: flex;
+  align-items: center;
+}
+.header .h_nav ul {
+}
+.header .h_nav ul li {
+  float: left;
+  margin-left: 50px;
+}
+.header .h_nav ul li a {
+  color: #fff;
+  font-size: 20px;
+}
+.header .h_search {
+  width: 120px;
+  display: flex;
+  justify-content: flex-end;
+  float: right;
+}
+.header .h_search i {
+  font-size: 30px;
+  color: #fff;
+  line-height: 50px;
+}
+
+/* ---------------------------- banner */
+.slideList {
+  height: 100%;
+  overflow: hidden;
+}
+.slideList .slick-slide {
+  position: relative;
+}
+
+.slideList .slick-arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 0;
+  background-color: rgba(255,255,255,0.3);
+  width: 40px; height: 40px;
+  border: none;
+  z-index: 30;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  border-radius: 50%;
+}
+.slideList .slick-prev {left: 0;}
+.slideList .slick-prev::before {
+  content: "\f053";
+  font-size: 30px;
+  color: #fff;
+}
+.slideList .slick-next {right: 0;}
+.slideList .slick-next::before {
+  content: "\f054";
+  font-size: 30px;
+  color: #fff;
+}
+/* ---------------------------- slide_left */
+.slideList .slide_left {
+  height: 100vh;
+  width: 50%;
+  float: left;
+}
+.slideList .slide_left h2 {
+  position: absolute;
+  left: -100%;
+  top: calc(50% - 250px);
+  opacity: 0;
+  transition: 1s 0.5s;
+
+  font-size: 150px;
+  letter-spacing: 20px;
+  color: #fff;
+}
+.slideList .slide_left h2 strong {
+  display: block;
+  margin-bottom: -2px;
+}
+.slideList .slick-active .slide_left h2 {
+  left: calc(50% - 800px);
+  opacity: 1;
+}
+.slideList .slide_left h2 span {
+  display: block;
+  width: 300px;
+  font-size: 33px;
+  position: absolute;
+  left: 460px;
+  bottom: -8px;
+  letter-spacing: 20px;
+}
+
+.slideList .slide_left .shoes {
+  position: absolute;
+  right: -100%;
+  top: calc((50% - 190px));
+  opacity: 0;
+  transition: 1s 0.5s;
+  width: 1000px; height: 200px;
+}
+.slideList .slick-active .slide_left .shoes {
+  right: calc(50% - 130px);
+  opacity: 1;
+}
+.slideList .slide_left .shoes img {width: 100%;}
+
+
+/* ---------------------------- slide_right */
+.slide_right {
+  height: 100vh;
+  width: 50%;
+  float: right;
+}
+
+.slideList .slide_right .title .tit1 {
+  position: absolute;
+  left: 50%;
+  top: calc(50% - 50px);
+  opacity: 0;
+  transition: 1.5s 0.5s;
+}
+.slideList .slick-active .slide_right .title .tit1 {
+  left: calc(50% + 250px);
+  opacity: 1;
+}
+
+.slideList .slide_right .tit1 em {
+  display: inline-block;
+  font-size: 60px;
+  color: #fff;
+}
+.slideList .slide_right .tit1 span {
+  padding-left: 10px;
+  letter-spacing: 5px;
+}
+.slideList .slide_right .tit1 span i {
+  color: rgb(255, 224, 85);
+}
+.slideList .slide_right .tit1 span i.last {
+  color: #ccc;
+}
+.slideList .slide_right .tit1 p {
+  font-size: 20px;
+  color: #fff;
+}
+
+.slideList .slide_right .title .list {
+  position: absolute;
+  right: 10%;
+  top: calc((50% + 67px));
+  opacity: 0;
+  transition: 1.6s 0.5s;
+}
+.slideList .slick-active .slide_right .title .list {
+  right: calc(50% - 580px);
+  opacity: 1;
+}
+
+.slide_right .title .list p {
+  display: inline-block;
+  padding: 10px 0 20px 0;
+  color: #fff;
+}
+.slide_right .title .list ul {
+  font-size: 20px;
+  color: #e1e1e1;
+}
+.slide_right .title .list ul li {
+  position: relative;
+  padding-left: 15px;
+}
+.slide_right .title .list ul li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.slide_right .title .slide_btn {
+  margin-top: 30px;
+}
+.slide_right .title .slide_btn > div {
+  float: left;
+}
+
+.slide_right .title .slide_btn .s_btn {
+  position: absolute;
+  left: 60%;
+  top: calc(50% + 185px);
+  opacity: 0;
+  transition: 1.5s 1s;
+  background-color: orange;
+  padding: 5px;
+}
+
+.slideList .slick-active .slide_right .slide_btn .s_btn {
+  opacity: 1;
+  left: calc(50% + 260px);
+
+}
+
+.slide_right .title .slide_btn .c_btn {
+  position: absolute;
+  top: 70%;
+  left: calc(50% + 340px);
+  padding: 8px 13px;
+  border: 2px solid #ccc;
+  opacity: 0;
+  transition: 1.5s 1s;
+  color: #eee;
+}
+.slideList .slick-active .slide_right .slide_btn .c_btn {
+  opacity: 1;
+  top: calc(50% + 180px);
+}
+.slide_right .title .slide_btn .price {
+  position: absolute;
+  right: 20%;
+  top: calc(50% + 185px);
+  opacity: 0;
+  transition: 1.5s 1s;
+  font-size: 22px;
+  color: #fff;
+  font-weight: bold;
+}
+.slideList .slick-active .slide_right .slide_btn .price {
+  opacity: 1;
+  right: calc(50% - 550px);
+}
+.slide_right .title .slide_btn .price span {
+  letter-spacing: 2px;
+}
